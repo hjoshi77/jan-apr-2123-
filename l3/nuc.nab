@@ -1,0 +1,3 @@
+molecule m;
+m=bdna("cgcgaattcgcg");
+putpdb ("dodecamer.pdb",m);
