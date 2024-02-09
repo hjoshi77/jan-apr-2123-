@@ -1,0 +1,7 @@
+parm ../na_WI.prmtop
+trajin ../heat.nc  1 10000 20 
+trajin ../npt.nc  1 99999 20 
+center :1-41 mass origin 
+image origin center 
+rms first mass out rmsd.dat  :1-41&!@H=
+trajout md_img.dcd

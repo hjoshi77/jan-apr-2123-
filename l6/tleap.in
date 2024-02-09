@@ -1,0 +1,22 @@
+source leaprc.RNA.OL3.cufix
+source leaprc.DNA.bsc1.cufix
+source leaprc.water.tip3p
+
+cufix = loadamberparams frcmod.ff99cufix
+#loadamberparams resp_lig.frcmod
+#loadoff resp_lig.lib
+
+na = loadpdb rna.pdb
+
+check na
+
+solvateBOX na TIP3PBOX 20.0
+addions na K+ 75
+addions na Cl- 35
+
+check na
+savepdb na na_WI.pdb
+saveamberparm na na_WI.prmtop na_WI.rst7
+quit
+~  
+
